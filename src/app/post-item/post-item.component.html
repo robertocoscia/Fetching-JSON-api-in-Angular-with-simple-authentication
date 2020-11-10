@@ -1,0 +1,23 @@
+<div class="container">
+    
+    <div  class="text-center">
+        <img src="" alt="">
+        <h3 >{{post[propertyId-1].title}}</h3>
+    </div>
+
+    <div class="justify-left">
+        <p>{{post[propertyId-1].body}}</p>
+    </div>
+
+    <div class="justify-left">
+        <h3>Comments</h3>
+
+        <!--Add comments-->
+        <add-comments (addComment)="addComment($event)"></add-comments>
+        <ul *ngFor="let c of comments">
+            
+            <li>{{c.body}}</li>
+            
+        </ul>
+    </div>
+</div>
