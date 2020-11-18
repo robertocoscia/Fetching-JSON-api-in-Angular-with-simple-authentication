@@ -15,9 +15,4 @@ export class HttpService  {
     return this._http.get<Post[]>(this.apiUrl);
   }
 
-  getPostsByParameter():Observable<Post[]>{
-    let params1= new HttpParams().set('userId','1');
-    return this._http.get<Post[]>(this.apiUrl, {params:params1});
-  }
-
 }

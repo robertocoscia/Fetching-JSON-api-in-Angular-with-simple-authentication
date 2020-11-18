@@ -1,9 +1,8 @@
 import { HttpService } from '../services/http.service';
 import { Post } from '../models/Post.model';
 import { CommentService } from '../services/comment.service';
-import { EventEmitter } from 'protractor';
-import { Component, OnInit, Output } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'post-item',
@@ -30,15 +29,16 @@ export class PostItemComponent implements OnInit {
     this.commentService.getComments().subscribe(comments=>{
       this.comments= comments;
     })
-    }
 
-    addComment(comment:Comment[]){
-      this.commentService.addComment(comment).subscribe(comment=>{
-        this.comments.push(comment);
-      })
-    }
+  }
 
-  };
+  addComment(comment:Comment[]){
+    this.commentService.addComment(comment).subscribe(comment=>{
+      this.comments.push(comment);
+    })
+  }
+
+};
 
   
   

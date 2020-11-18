@@ -14,7 +14,10 @@
 
         <!--Add comments-->
         <add-comments (addComment)="addComment($event)"></add-comments>
-        <ul *ngFor="let c of comments">
+        <ul 
+            *ngFor="let c of comments"
+            [c]="c"
+        >
             
             <li>{{c.body}}</li>
             
